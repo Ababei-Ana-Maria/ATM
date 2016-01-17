@@ -23,9 +23,9 @@
             Parola<asp:TextBox ID="TextBox4" runat="server" style="margin-left: 221px"></asp:TextBox>
         </div>
         <div style="height: 121px">
-            <asp:Button ID="Button1" runat="server" style="margin-left: 211px" Text="Log in" Width="94px" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" runat="server" style="margin-left: 211px" Text="Log in" Width="94px" OnClientClick="open('my_Profile.aspx','otherpage');" OnClick="Button1_Click" />
             <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" style="margin-left: 0px" Text="Guest Mode" />
-            <asp:Button ID="Button2" runat="server" Text="Creeaza Cont !"  OnClientClick="open('WebForm2.aspx','otherpage');" OnClick="Button2_Click" />
+            <asp:Button ID="Button2" runat="server" Text="Creeaza Cont !"  OnClientClick="open('creare_cont.aspx','otherpage');" OnClick="Button2_Click" />
         </div>
     </form>
 </body>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="my_Profile.aspx.cs" Inherits="WingtipToys.my_Profile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="my_Profile.aspx.cs" Inherits="QUIZ_ATM.my_Profile" %>
 
 <!DOCTYPE html>
 
