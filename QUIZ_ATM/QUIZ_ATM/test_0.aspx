@@ -7,7 +7,8 @@
     <title>Quiz ATM</title>
 </head>
 <body style="height:auto;background-color:bisque;">
-    <form id="form1" runat="server">
+    <form id="form1" 
+        runat="server">
     <div style="height: 99px; margin-top: 0px; text-align:center; text-decoration-style:double; text-decoration-color:blueviolet;font-size:large;font-family:'Comic Sans MS';text-emphasis-color:azure;">
             QUIZZ ADMITERE ATM
 
@@ -18,7 +19,8 @@
                     document.forms[0].target = "_self";
                 }
 </script>
-    <div style="height: auto; width: auto"; align="right">
+    <div style="height: auto; width: auto"; 
+        align="right">
         <asp:Button ID="logoutButton" 
             runat="server" 
             BorderStyle="Ridge" 
