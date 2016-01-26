@@ -128,6 +128,14 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="adaugire_intrebari.aspx" />
     <Content Include="admin_profile.aspx" />
+    <Content Include="App_Data\Teste.mdf" />
+    <Content Include="App_Data\Teste_log.ldf">
+      <DependentUpon>Teste.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Utilizatori.mdf" />
+    <Content Include="App_Data\Utilizatori_log.ldf">
+      <DependentUpon>Utilizatori.mdf</DependentUpon>
+    </Content>
     <Content Include="clasament.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -346,9 +354,7 @@
       <DependentUpon>test_0.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
