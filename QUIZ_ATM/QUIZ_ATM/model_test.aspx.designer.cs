@@ -58,22 +58,22 @@ namespace QUIZ_ATM {
         protected global::System.Web.UI.Timer Timer1;
         
         /// <summary>
-        /// Label1 control.
+        /// questionnr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label questionnr;
         
         /// <summary>
-        /// Label2 control.
+        /// question control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label question;
         
         /// <summary>
         /// CheckBox1 control.
@@ -85,13 +85,13 @@ namespace QUIZ_ATM {
         protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
         
         /// <summary>
-        /// Label3 control.
+        /// answer1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label answer1;
         
         /// <summary>
         /// CheckBox2 control.
@@ -103,13 +103,13 @@ namespace QUIZ_ATM {
         protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
         
         /// <summary>
-        /// Label4 control.
+        /// answer2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label answer2;
         
         /// <summary>
         /// CheckBox3 control.
@@ -121,13 +121,13 @@ namespace QUIZ_ATM {
         protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
         
         /// <summary>
-        /// Label5 control.
+        /// answer3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label answer3;
         
         /// <summary>
         /// CheckBox4 control.
@@ -139,13 +139,13 @@ namespace QUIZ_ATM {
         protected global::System.Web.UI.WebControls.CheckBox CheckBox4;
         
         /// <summary>
-        /// Label6 control.
+        /// answer4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label answer4;
         
         /// <summary>
         /// Hint control.

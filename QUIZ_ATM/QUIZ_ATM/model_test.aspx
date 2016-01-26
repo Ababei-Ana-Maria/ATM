@@ -6,6 +6,9 @@
 <head id="Head1" 
     runat="server">
     <title>Quiz ATM</title>
+    <style type="text/css">
+        .auto-style1 {}
+    </style>
 </head>
 <body style="height:auto;background-color:bisque;">
      <form id="form1" 
@@ -23,7 +26,7 @@
             BorderStyle="Ridge" 
             Height="25px" 
             OnClick="logoutButton_Click"  
-            OnClientClick="SetTarget();"  
+            OnClientClick="SetTarget();" CssClass="auto-style1"  
             />
     </div>
          <script type = "text/javascript">
@@ -46,13 +49,11 @@
 
         <div style="height: 150px; margin-top: 46px">
     
-            <asp:Label ID="Label1" 
+            <asp:Label ID="questionnr" 
                 runat="server" 
-                Text="Nr intrebare.">
-
-            </asp:Label>
+                Text="Nr intrebare."></asp:Label>
 &nbsp;
-            <asp:Label ID="Label2" 
+            <asp:Label ID="question" 
                 runat="server" 
                 Text="Intrebarea propriu-zisa"
                 ></asp:Label>
@@ -60,7 +61,7 @@
             <asp:CheckBox ID="CheckBox1" 
                 runat="server" />
             &nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label3" 
+            <asp:Label ID="answer1" 
                 runat="server" 
                 Text="Raspuns 1"
                 ></asp:Label>
@@ -68,21 +69,21 @@
             <asp:CheckBox ID="CheckBox2" 
                 runat="server" />
 &nbsp;&nbsp;
-            <asp:Label ID="Label4" 
+            <asp:Label ID="answer2" 
                 runat="server" 
                 Text="Raspuns 2"></asp:Label>
             <br />
             <asp:CheckBox ID="CheckBox3" 
                 runat="server" />
 &nbsp;&nbsp;
-            <asp:Label ID="Label5" 
+            <asp:Label ID="answer3" 
                 runat="server" 
                 Text="Raspuns 3"></asp:Label>
             <br />
             <asp:CheckBox ID="CheckBox4" 
                 runat="server" />
 &nbsp;&nbsp;
-            <asp:Label ID="Label6" 
+            <asp:Label ID="answer4" 
                 runat="server" 
                 Text="Raspuns 4"></asp:Label>
             <br />
