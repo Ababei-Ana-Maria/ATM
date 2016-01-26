@@ -12,9 +12,20 @@
             QUIZZ ADMITERE ATM
 
     </div>
-
+ <%-- Definirea functiei de redirectare --%>
+            <script type = "text/javascript">
+                function SetTarget() {
+                    document.forms[0].target = "_self";
+                }
+</script>
     <div style="height: auto; width: auto"; align="right">
-        <asp:Button ID="logoutButton" runat="server" BorderStyle="Ridge" Height="25px" OnClick="logoutButton_Click"  OnClientClick="window.open('Default.aspx','Default');" Text="Log Out"/>
+        <asp:Button ID="logoutButton" 
+            runat="server" 
+            BorderStyle="Ridge" 
+            Height="25px" 
+            OnClick="logoutButton_Click"  
+            OnClientClick="SetTarget()" 
+            Text="Log Out"/>
     </div>
 
         <div style="height: 391px">
@@ -34,7 +45,12 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="start_test" runat="server" style="margin-left: 29px" Text="Start test!" />
+            <asp:Button ID="start_test" 
+                runat="server" 
+                style="margin-left: 29px" 
+                Text="Start test!" 
+                OnClick="start_test_Click"  
+                OnClientClick="SetTarget()"/>
         </div>
 
     </form>

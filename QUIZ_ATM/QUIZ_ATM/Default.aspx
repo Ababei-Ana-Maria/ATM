@@ -23,10 +23,16 @@
             Parola<asp:TextBox ID="TextBox4" runat="server" style="margin-left: 221px"></asp:TextBox>
         </div>
         <div style="height: 121px">
+            <%-- Definirea functiei de redirectare --%>
+            <script type = "text/javascript">
+                function SetTarget() {
+                    document.forms[0].target = "_self";
+                }
+</script>
             <%-- de verificat daca cel care intra este admin si il vom trimite in pagina 6(my_Admin) iar daca nu este admin il vom trimite in pagina 3(my_Profile)--%>
-            <asp:Button ID="login" runat="server" style="margin-left: 211px" Text="Log in" Width="94px" OnClick="login_Click" OnClientClick="window.open('my_Profile.aspx','my_Profile');"/>
-            <asp:Button ID="guestmode" runat="server" style="margin-left: 0px" Text="Guest Mode" OnClick="guestmode_Click" OnClientClick="window.open('my_Profile.aspx','my_Profile');"/>
-            <asp:Button ID="crearecont" runat="server" Text="Creeaza Cont !" OnClick="crearecont_Click" OnClientClick="window.open('creare_cont.aspx','creare_cont');" />
+            <asp:Button ID="login" runat="server" style="margin-left: 211px" Text="Log in" Width="94px" OnClick="login_Click" OnClientClick="SetTarget()"/>
+            <asp:Button ID="guestmode" runat="server" style="margin-left: 0px" Text="Guest Mode" OnClick="guestmode_Click" OnClientClick="SetTarget()"/>
+            <asp:Button ID="crearecont" runat="server" Text="Creeaza Cont !" OnClick="crearecont_Click" OnClientClick="SetTarget()" />
         </div>
     </form>
 </body>

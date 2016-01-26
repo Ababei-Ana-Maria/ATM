@@ -16,17 +16,18 @@ namespace QUIZ_ATM
         //Log in
         protected void login_Click(object sender, EventArgs e)
         {
-
+            // trebuie sa verificam daca e admin sau nu ca sa stim la ce pagina sa facem redirectarea
+            Response.Redirect("my_Profile.aspx");
         }
         //Guest
         protected void guestmode_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("my_Profile.aspx");
         }
         //Creare cont
         protected void crearecont_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("creare_cont.aspx");
         }
     }
 }

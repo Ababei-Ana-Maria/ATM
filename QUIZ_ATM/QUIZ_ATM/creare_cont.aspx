@@ -29,7 +29,17 @@
         Confirma parola<asp:TextBox ID="TextBox5" runat="server" Height="22px" style="margin-left: 269px; margin-top: 4px;" Width="200px"></asp:TextBox>
     </div>
         <div style="height: 39px">
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="margin-left: 434px; margin-top: 4px" Text="Creare" OnClientClick="window.open('my_Profile.aspx','my_Profile');" Width="80px" />
+            <asp:Button ID="creare" 
+                runat="server" 
+                OnClick="creare_Click" 
+                style="margin-left: 434px;margin-top: 4px" 
+                Text="Creare" 
+                OnClientClick="SetTarget()" />
+            <script type = "text/javascript">
+                function SetTarget() {
+                    document.forms[0].target = "_self";
+                }
+</script>
         </div>
     </form>
     </body>

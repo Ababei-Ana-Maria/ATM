@@ -14,9 +14,9 @@ namespace QUIZ_ATM
 
         }
         //creare cont
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void creare_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("my_Profile.aspx");
         }
     }
 }

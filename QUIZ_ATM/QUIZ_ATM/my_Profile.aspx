@@ -12,9 +12,20 @@
             QUIZZ ADMITERE ATM
 
     </div>
-
+         <%-- Definirea functiei de redirectare --%>
+            <script type = "text/javascript">
+                function SetTarget() {
+                    document.forms[0].target = "_self";
+                }
+</script>
     <div style="height: auto; width: auto"; align="right">
-        <asp:Button ID="logoutButton" runat="server" BorderStyle="Ridge" Height="25px" OnClick="logoutButton_Click"  OnClientClick="window.open('Default.aspx','Default');" Text="Log Out"/>
+        <asp:Button ID="logoutButton" 
+            runat="server" 
+            BorderStyle="Ridge" 
+            Height="25px" 
+            OnClick="logoutButton_Click"  
+            OnClientClick="SetTarget()" 
+            Text="Log Out"/>
     </div>
 
     <div style="height: 300px; width: 800px">
@@ -41,9 +52,18 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="testnou" runat="server" Text="Test nou" OnClick="testnou_Click" OnClientClick="window.open('test_0.aspx','test_0');" />
+            <asp:Button ID="testnou" 
+                runat="server" 
+                Text="Test nou" 
+                OnClick="testnou_Click" 
+                OnClientClick="SetTarget()" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="clasament" runat="server" Text="Vezi clasament" Width="146px" />
+            <asp:Button ID="clasament" 
+                runat="server" 
+                Text="Vezi clasament" 
+                Width="146px"
+                OnClick="clasament_Click" 
+                OnClientClick="SetTarget()" />
     </div>
     
     </form>
