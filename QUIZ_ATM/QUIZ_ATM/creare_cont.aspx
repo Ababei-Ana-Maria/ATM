@@ -14,19 +14,52 @@
 
                             </div>
     <div style="height: 40px">
-        Nume<asp:TextBox ID="TextBox1" runat="server" Height="22px" style="margin-left: 335px; margin-top: 4px;" Width="200px"></asp:TextBox>
+        Nume<asp:TextBox ID="TextBox1" 
+            runat="server" 
+            Height="22px" 
+            style="margin-left: 335px; margin-top: 4px;" 
+            Width="200px">
+            </asp:TextBox>
     </div>
     <div style="height: 40px">
-        Prenume<asp:TextBox ID="TextBox2" runat="server" Height="22px" style="margin-left: 317px; margin-top: 4px;" Width="200px"></asp:TextBox>
+        Prenume<asp:TextBox ID="TextBox2" 
+            runat="server" 
+            Height="22px" 
+            style="margin-left: 317px; margin-top: 4px;" 
+            Width="200px">
+               </asp:TextBox>
     </div>
     <div style="height: 40px">
-        Email<asp:TextBox ID="TextBox4" runat="server" Height="22px" style="margin-left: 335px; margin-top: 4px;" Width="200px"></asp:TextBox>
+        Email<asp:TextBox ID="TextBox4" 
+            runat="server" 
+            Height="22px" 
+            style="margin-left: 335px; margin-top: 4px;" 
+            Width="200px">
+             </asp:TextBox>
     </div>
     <div style="height: 40px">
+<<<<<<< HEAD
         Parola<asp:TextBox ID="TextBox3" runat="server" Height="22px" style="margin-left: 331px; margin-top: 4px" Width="200px" TextMode="Password"></asp:TextBox>
         </div>
     <div style="height: 40px">
         Confirma parola<asp:TextBox ID="TextBox5" runat="server" Height="22px" style="margin-left: 269px; margin-top: 4px;" Width="200px" TextMode="Password"></asp:TextBox>
+=======
+        Parola<asp:TextBox ID="TextBox3" 
+            runat="server" 
+            Height="22px" 
+            style="margin-left: 331px; margin-top: 4px" 
+            Width="200px">
+              </asp:TextBox>
+        </div>
+    <div style="height: 40px">
+        Confirma parola
+        <asp:TextBox ID="TextBox5" 
+            runat="server" 
+            Height="22px" 
+            style="margin-left: 269px; margin-top: 4px;" 
+            Width="200px">
+        </asp:TextBox>
+>>>>>>> origin/master
     </div>
         <div style="height: 39px">
             <asp:Button ID="creare" 

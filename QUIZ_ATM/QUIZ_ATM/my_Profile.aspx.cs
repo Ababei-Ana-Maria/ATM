@@ -16,7 +16,7 @@ namespace QUIZ_ATM
         // butonul de LOG OUT
         protected void logoutButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("my_Profile.aspx");
+            Response.Redirect("Default.aspx");
         }
         //Butonul TEST NOU
         protected void testnou_Click(object sender, EventArgs e)
