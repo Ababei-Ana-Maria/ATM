@@ -23,10 +23,10 @@
         Email<asp:TextBox ID="TextBox4" runat="server" Height="22px" style="margin-left: 335px; margin-top: 4px;" Width="200px"></asp:TextBox>
     </div>
     <div style="height: 40px">
-        Parola<asp:TextBox ID="TextBox3" runat="server" Height="22px" style="margin-left: 331px; margin-top: 4px" Width="200px"></asp:TextBox>
+        Parola<asp:TextBox ID="TextBox3" runat="server" Height="22px" style="margin-left: 331px; margin-top: 4px" Width="200px" TextMode="Password"></asp:TextBox>
         </div>
     <div style="height: 40px">
-        Confirma parola<asp:TextBox ID="TextBox5" runat="server" Height="22px" style="margin-left: 269px; margin-top: 4px;" Width="200px"></asp:TextBox>
+        Confirma parola<asp:TextBox ID="TextBox5" runat="server" Height="22px" style="margin-left: 269px; margin-top: 4px;" Width="200px" TextMode="Password"></asp:TextBox>
     </div>
         <div style="height: 39px">
             <asp:Button ID="creare" 

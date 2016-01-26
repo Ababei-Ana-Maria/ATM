@@ -20,7 +20,7 @@
             Nume_Guest<asp:TextBox ID="TextBox3" runat="server" style="margin-left: 180px"></asp:TextBox>
         </div>
         <div style="height: 31px">
-            Parola<asp:TextBox ID="TextBox4" runat="server" style="margin-left: 221px"></asp:TextBox>
+            Parola<asp:TextBox ID="TextBox4" runat="server" style="margin-left: 221px" TextMode="Password"></asp:TextBox>
         </div>
         <div style="height: 121px">
             <%-- Definirea functiei de redirectare --%>
