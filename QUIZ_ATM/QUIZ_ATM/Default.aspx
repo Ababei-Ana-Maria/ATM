@@ -14,13 +14,25 @@
     <form id="form1" runat="server">
         <div style="height: 33px; margin-top: 46px">
             
-            Utilizator<asp:TextBox ID="TextBox2" runat="server" style="margin-left: 204px"></asp:TextBox>
+            Utilizator
+            <asp:TextBox ID="TextBox2" 
+                runat="server" 
+                style="margin-left: 204px"
+                ></asp:TextBox>
         </div>
         <div style="height: 35px">
-            Nume_Guest<asp:TextBox ID="TextBox3" runat="server" style="margin-left: 180px"></asp:TextBox>
+            Nume_Guest
+            <asp:TextBox ID="TextBox3" 
+                runat="server" 
+                style="margin-left: 180px"
+                ></asp:TextBox>
         </div>
         <div style="height: 31px">
-            Parola<asp:TextBox ID="TextBox4" runat="server" style="margin-left: 221px"></asp:TextBox>
+            Parola
+            <asp:TextBox ID="TextBox4" 
+                runat="server" 
+                style="margin-left: 221px"
+                ></asp:TextBox>
         </div>
         <div style="height: 121px">
             <%-- Definirea functiei de redirectare --%>
