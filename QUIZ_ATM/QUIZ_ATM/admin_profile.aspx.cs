@@ -26,7 +26,7 @@ namespace QUIZ_ATM
 
         protected void questionadd_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("adaugire_intrebari.aspx");
         }
 
         protected void modifyquestion_Click(object sender, EventArgs e)

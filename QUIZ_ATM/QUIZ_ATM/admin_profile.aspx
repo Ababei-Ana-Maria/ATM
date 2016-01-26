@@ -53,7 +53,8 @@
        <asp:Button ID="questionadd" 
            runat="server" 
            OnClick="questionadd_Click" 
-           Text="Adaugare Intrebare" />
+           Text="Adaugare Intrebare"
+            OnClientClick="SetTarget()"/>
   
        
     <div style="height: 50px; margin-top: 46px">

@@ -126,6 +126,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="adaugire_intrebari.aspx" />
     <Content Include="admin_profile.aspx" />
     <Content Include="clasament.aspx" />
     <Content Include="Content\Site.css" />
@@ -235,6 +236,13 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adaugire_intrebari.aspx.cs">
+      <DependentUpon>adaugire_intrebari.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adaugire_intrebari.aspx.designer.cs">
+      <DependentUpon>adaugire_intrebari.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin_profile.aspx.cs">
       <DependentUpon>admin_profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
