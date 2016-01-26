@@ -26,8 +26,7 @@ namespace QUIZ_ATM
         //Butonul VEZI CLASAMENT
         protected void clasament_Click(object sender, EventArgs e)
         {
-            //trebuie facuta pagina
-           // Response.Redirect("clasament.aspx");
+          Response.Redirect("clasament.aspx");
         }
     }
 }

@@ -21,7 +21,11 @@
   <div style="height: 50px; width: auto"; 
        align="right">
  
-      <asp:Button ID="LogOut" runat="server" Text="Log Out" OnClick="LogOut_Click"  OnClientClick="SetTarget();"/>
+      <asp:Button ID="LogOut" 
+          runat="server" 
+          Text="Log Out"
+           OnClick="LogOut_Click"  
+          OnClientClick="SetTarget();"/>
     </div>
       <script type = "text/javascript">
           function SetTarget() {
@@ -30,27 +34,35 @@
 
 </script>
          </div>
-         <asp:Label ID="label_nume" runat="server" Text="Nume si Prenume"></asp:Label>
+         <asp:Label ID="label_nume" 
+             runat="server" 
+             Text="Nume si Prenume"></asp:Label>
 
 
    <div style="height: 50px; margin-top: 46px">
 
 
-       <asp:Button ID="adminadd" runat="server" OnClick="adminadd_Click" Text="Adaugare Admin" />
+       <asp:Button ID="adminadd" 
+           runat="server" 
+           OnClick="adminadd_Click" 
+           Text="Adaugare Admin" />
 
    <div style="height: 50px; margin-top: 46px">
 
 
-       <asp:Button ID="questionadd" runat="server" OnClick="questionadd_Click" Text="Adaugare Intrebare" />
+       <asp:Button ID="questionadd" 
+           runat="server" 
+           OnClick="questionadd_Click" 
+           Text="Adaugare Intrebare" />
   
        
     <div style="height: 50px; margin-top: 46px">
 
 
-
-
-
-        <asp:Button ID="modifyquestion" runat="server" OnClick="modifyquestion_Click" Text="Modificare/Stergere Intrebare" />
+        <asp:Button ID="modifyquestion" 
+            runat="server" 
+            OnClick="modifyquestion_Click" 
+            Text="Modificare/Stergere Intrebare" />
 
 
 
