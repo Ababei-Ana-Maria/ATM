@@ -28,15 +28,12 @@
                 ></asp:TextBox>
         </div>
         <div style="height: 31px">
-<<<<<<< HEAD
-            Parola<asp:TextBox ID="TextBox4" runat="server" style="margin-left: 221px" TextMode="Password"></asp:TextBox>
-=======
             Parola
             <asp:TextBox ID="TextBox4" 
                 runat="server" 
                 style="margin-left: 221px"
+                TextMode="Password"
                 ></asp:TextBox>
->>>>>>> origin/master
         </div>
         <div style="height: 121px">
             <%-- Definirea functiei de redirectare --%>
