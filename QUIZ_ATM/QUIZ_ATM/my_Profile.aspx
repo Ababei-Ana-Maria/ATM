@@ -14,7 +14,7 @@
     </div>
 
     <div style="height: auto; width: auto"; align="right">
-        <asp:LinkButton ID="logoutButton" runat="server" BorderStyle="Ridge" Height="18px">Logout</asp:LinkButton>
+        <asp:Button ID="logoutButton" runat="server" BorderStyle="Ridge" Height="25px" OnClick="logoutButton_Click"  OnClientClick="window.open('Default.aspx','Default');" Text="Log Out"/>
     </div>
 
     <div style="height: 300px; width: 800px">
@@ -41,7 +41,7 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="test_nou" runat="server" Text="Test nou" Width="146px" />
+            <asp:Button ID="testnou" runat="server" Text="Test nou" OnClick="testnou_Click" OnClientClick="window.open('test_0.aspx','test_0');" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="clasament" runat="server" Text="Vezi clasament" Width="146px" />
     </div>

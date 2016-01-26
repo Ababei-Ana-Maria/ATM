@@ -5,11 +5,26 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WingtipToys
+namespace QUIZ_ATM
 {
     public partial class my_Profile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+        // butonul de LOG OUT
+        protected void logoutButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        //Butonul TEST NOU
+        protected void testnou_Click(object sender, EventArgs e)
+        {
+
+        }
+        //Butonul VEZI CLASAMENT
+        protected void clasament_Click(object sender, EventArgs e)
         {
 
         }

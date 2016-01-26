@@ -14,7 +14,7 @@
     </div>
 
     <div style="height: auto; width: auto"; align="right">
-        <asp:LinkButton ID="logoutButton" runat="server" BorderStyle="Ridge" Height="18px">Logout</asp:LinkButton>
+        <asp:Button ID="logoutButton" runat="server" BorderStyle="Ridge" Height="25px" OnClick="logoutButton_Click"  OnClientClick="window.open('Default.aspx','Default');" Text="Log Out"/>
     </div>
 
         <div style="height: 391px">

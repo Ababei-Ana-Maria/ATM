@@ -37,7 +37,7 @@ namespace QUIZ_ATM {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton logoutButton;
+        protected global::System.Web.UI.WebControls.Button logoutButton;
         
         /// <summary>
         /// Label1 control.
@@ -94,13 +94,13 @@ namespace QUIZ_ATM {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// test_nou control.
+        /// testnou control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button test_nou;
+        protected global::System.Web.UI.WebControls.Button testnou;
         
         /// <summary>
         /// clasament control.
