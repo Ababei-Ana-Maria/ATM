@@ -199,6 +199,7 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="model_test.aspx" />
+    <Content Include="modificare_intrebare.aspx" />
     <Content Include="my_Profile.aspx" />
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -314,6 +315,13 @@
     </Compile>
     <Compile Include="model_test.aspx.designer.cs">
       <DependentUpon>model_test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modificare_intrebare.aspx.cs">
+      <DependentUpon>modificare_intrebare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modificare_intrebare.aspx.designer.cs">
+      <DependentUpon>modificare_intrebare.aspx</DependentUpon>
     </Compile>
     <Compile Include="my_Profile.aspx.cs">
       <DependentUpon>my_Profile.aspx</DependentUpon>

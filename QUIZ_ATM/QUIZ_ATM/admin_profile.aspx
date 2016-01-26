@@ -63,7 +63,8 @@
         <asp:Button ID="modifyquestion" 
             runat="server" 
             OnClick="modifyquestion_Click" 
-            Text="Modificare/Stergere Intrebare" />
+            Text="Modificare/Stergere Intrebare" 
+            OnClientClick="SetTarget()"/>
 
 
 

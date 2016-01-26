@@ -31,7 +31,7 @@ namespace QUIZ_ATM
 
         protected void modifyquestion_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("modificare_intrebare.aspx");
         }
     }
 }
