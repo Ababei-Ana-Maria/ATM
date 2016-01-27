@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TesteModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TesteModelStoreContainer">
+          <EntitySet Name="Intrebari" EntityType="TesteModel.Store.Intrebari" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Raspunsuri" EntityType="TesteModel.Store.Raspunsuri" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="TesteModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Raspunsuri_Intrebari" Association="TesteModel.Store.FK_Raspunsuri_Intrebari">
+            <End Role="Intrebari" EntitySet="Intrebari" />
+            <End Role="Raspunsuri" EntitySet="Raspunsuri" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Intrebari">
+          <Key>
+            <PropertyRef Name="id_intrebare" />
+          </Key>
+          <Property Name="id_intrebare" Type="numeric" Nullable="false" />
+          <Property Name="text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="varianta_corecta" Type="numeric" Nullable="false" />
+          <Property Name="id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Raspunsuri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id_intrebare" Type="numeric" Nullable="false" />
+          <Property Name="A" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="B" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="C" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="D" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Raspunsuri_Intrebari">
+          <End Role="Intrebari" Type="TesteModel.Store.Intrebari" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspunsuri" Type="TesteModel.Store.Raspunsuri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Intrebari">
+              <PropertyRef Name="id_intrebare" />
+            </Principal>
+            <Dependent Role="Raspunsuri">
+              <PropertyRef Name="id_intrebare" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TesteModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TesteEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Intrebaris" EntityType="TesteModel.Intrebari" />
+          <EntitySet Name="Raspunsuris" EntityType="TesteModel.Raspunsuri" />
+          <EntitySet Name="sysdiagrams" EntityType="TesteModel.sysdiagram" />
+          <AssociationSet Name="FK_Raspunsuri_Intrebari" Association="TesteModel.FK_Raspunsuri_Intrebari">
+            <End Role="Intrebari" EntitySet="Intrebaris" />
+            <End Role="Raspunsuri" EntitySet="Raspunsuris" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Intrebari">
+          <Key>
+            <PropertyRef Name="id_intrebare" />
+          </Key>
+          <Property Name="id_intrebare" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="varianta_corecta" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Raspunsuris" Relationship="TesteModel.FK_Raspunsuri_Intrebari" FromRole="Intrebari" ToRole="Raspunsuri" />
+        </EntityType>
+        <EntityType Name="Raspunsuri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id_intrebare" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="A" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="B" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="C" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="D" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Intrebari" Relationship="TesteModel.FK_Raspunsuri_Intrebari" FromRole="Raspunsuri" ToRole="Intrebari" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Raspunsuri_Intrebari">
+          <End Role="Intrebari" Type="TesteModel.Intrebari" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspunsuri" Type="TesteModel.Raspunsuri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Intrebari">
+              <PropertyRef Name="id_intrebare" />
+            </Principal>
+            <Dependent Role="Raspunsuri">
+              <PropertyRef Name="id_intrebare" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TesteModelStoreContainer" CdmEntityContainer="TesteEntities">
+          <EntitySetMapping Name="Intrebaris">
+            <EntityTypeMapping TypeName="TesteModel.Intrebari">
+              <MappingFragment StoreEntitySet="Intrebari">
+                <ScalarProperty Name="id_intrebare" ColumnName="id_intrebare" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="varianta_corecta" ColumnName="varianta_corecta" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Raspunsuris">
+            <EntityTypeMapping TypeName="TesteModel.Raspunsuri">
+              <MappingFragment StoreEntitySet="Raspunsuri">
+                <ScalarProperty Name="id_intrebare" ColumnName="id_intrebare" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TesteModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

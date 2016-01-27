@@ -20,7 +20,8 @@ namespace QUIZ_ATM.bussiness
             Utilizatori ccc = new Utilizatori();
             Admin adm = new Admin();
             Statistica stat = new Statistica();
-
+            Intrebari intr = new Intrebari();
+            Raspunsuri rasp = new Raspunsuri();
             
         }
         

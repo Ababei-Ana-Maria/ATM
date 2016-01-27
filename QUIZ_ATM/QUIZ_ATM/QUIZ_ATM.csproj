@@ -197,19 +197,19 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="presentation\creare_cont.aspx" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
+    <Content Include="presentation\Images\accent.png" />
+    <Content Include="presentation\Images\bullet.png" />
+    <Content Include="presentation\Images\heroAccent.png" />
+    <Content Include="presentation\Images\orderedList0.png" />
+    <Content Include="presentation\Images\orderedList1.png" />
+    <Content Include="presentation\Images\orderedList2.png" />
+    <Content Include="presentation\Images\orderedList3.png" />
+    <Content Include="presentation\Images\orderedList4.png" />
+    <Content Include="presentation\Images\orderedList5.png" />
+    <Content Include="presentation\Images\orderedList6.png" />
+    <Content Include="presentation\Images\orderedList7.png" />
+    <Content Include="presentation\Images\orderedList8.png" />
+    <Content Include="presentation\Images\orderedList9.png" />
     <Content Include="presentation\model_test.aspx" />
     <Content Include="presentation\modificare_intrebare.aspx" />
     <Content Include="presentation\my_Profile.aspx" />
@@ -230,6 +230,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Utilizatori.edmx</DependentUpon>
       <LastGenOutput>Utilizatori1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="bussiness\Teste.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Teste.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="bussiness\Teste.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Teste.edmx</DependentUpon>
+      <LastGenOutput>Teste.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="bussiness\Teste.edmx.diagram">
+      <DependentUpon>Teste.edmx</DependentUpon>
+    </Content>
+    <Content Include="bussiness\Teste.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Teste.edmx</DependentUpon>
+      <LastGenOutput>Teste.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -270,11 +287,32 @@
       <DependentUpon>Utilizatori.tt</DependentUpon>
     </Compile>
     <Compile Include="bussiness\bussiness.cs" />
+    <Compile Include="bussiness\Intrebari.cs">
+      <DependentUpon>Teste.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bussiness\Raspunsuri.cs">
+      <DependentUpon>Teste.tt</DependentUpon>
+    </Compile>
     <Compile Include="bussiness\Statistica.cs">
       <DependentUpon>Utilizatori.tt</DependentUpon>
     </Compile>
     <Compile Include="bussiness\sysdiagram.cs">
-      <DependentUpon>Utilizatori.tt</DependentUpon>
+      <DependentUpon>Teste.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bussiness\Teste.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Teste.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bussiness\Teste.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Teste.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bussiness\Teste.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Teste.edmx</DependentUpon>
     </Compile>
     <Compile Include="bussiness\Utilizatori.Context.cs">
       <AutoGen>True</AutoGen>
