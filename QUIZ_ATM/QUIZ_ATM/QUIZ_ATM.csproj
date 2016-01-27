@@ -28,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -126,8 +127,8 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
-    <Content Include="adaugire_intrebari.aspx" />
-    <Content Include="admin_profile.aspx" />
+    <Content Include="presentation\adaugire_intrebari.aspx" />
+    <Content Include="presentation\admin_profile.aspx" />
     <Content Include="App_Data\Teste.mdf" />
     <Content Include="App_Data\Teste_log.ldf">
       <DependentUpon>Teste.mdf</DependentUpon>
@@ -136,7 +137,7 @@
     <Content Include="App_Data\Utilizatori_log.ldf">
       <DependentUpon>Utilizatori.mdf</DependentUpon>
     </Content>
-    <Content Include="clasament.aspx" />
+    <Content Include="presentation\clasament.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -192,7 +193,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="creare_cont.aspx" />
+    <Content Include="presentation\creare_cont.aspx" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -206,9 +207,9 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
-    <Content Include="model_test.aspx" />
-    <Content Include="modificare_intrebare.aspx" />
-    <Content Include="my_Profile.aspx" />
+    <Content Include="presentation\model_test.aspx" />
+    <Content Include="presentation\modificare_intrebare.aspx" />
+    <Content Include="presentation\my_Profile.aspx" />
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -238,25 +239,25 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Default.aspx" />
+    <Content Include="presentation\Default.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="test_0.aspx" />
+    <Content Include="presentation\test_0.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adaugire_intrebari.aspx.cs">
+    <Compile Include="presentation\adaugire_intrebari.aspx.cs">
       <DependentUpon>adaugire_intrebari.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adaugire_intrebari.aspx.designer.cs">
+    <Compile Include="presentation\adaugire_intrebari.aspx.designer.cs">
       <DependentUpon>adaugire_intrebari.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin_profile.aspx.cs">
+    <Compile Include="presentation\admin_profile.aspx.cs">
       <DependentUpon>admin_profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin_profile.aspx.designer.cs">
+    <Compile Include="presentation\admin_profile.aspx.designer.cs">
       <DependentUpon>admin_profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -296,46 +297,46 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="clasament.aspx.cs">
+    <Compile Include="presentation\clasament.aspx.cs">
       <DependentUpon>clasament.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="clasament.aspx.designer.cs">
+    <Compile Include="presentation\clasament.aspx.designer.cs">
       <DependentUpon>clasament.aspx</DependentUpon>
     </Compile>
-    <Compile Include="creare_cont.aspx.cs">
+    <Compile Include="presentation\creare_cont.aspx.cs">
       <DependentUpon>creare_cont.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="creare_cont.aspx.designer.cs">
+    <Compile Include="presentation\creare_cont.aspx.designer.cs">
       <DependentUpon>creare_cont.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="presentation\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
+    <Compile Include="presentation\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="model_test.aspx.cs">
+    <Compile Include="presentation\model_test.aspx.cs">
       <DependentUpon>model_test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="model_test.aspx.designer.cs">
+    <Compile Include="presentation\model_test.aspx.designer.cs">
       <DependentUpon>model_test.aspx</DependentUpon>
     </Compile>
-    <Compile Include="modificare_intrebare.aspx.cs">
+    <Compile Include="presentation\modificare_intrebare.aspx.cs">
       <DependentUpon>modificare_intrebare.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="modificare_intrebare.aspx.designer.cs">
+    <Compile Include="presentation\modificare_intrebare.aspx.designer.cs">
       <DependentUpon>modificare_intrebare.aspx</DependentUpon>
     </Compile>
-    <Compile Include="my_Profile.aspx.cs">
+    <Compile Include="presentation\my_Profile.aspx.cs">
       <DependentUpon>my_Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="my_Profile.aspx.designer.cs">
+    <Compile Include="presentation\my_Profile.aspx.designer.cs">
       <DependentUpon>my_Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -346,11 +347,11 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="test_0.aspx.cs">
+    <Compile Include="presentation\test_0.aspx.cs">
       <DependentUpon>test_0.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="test_0.aspx.designer.cs">
+    <Compile Include="presentation\test_0.aspx.designer.cs">
       <DependentUpon>test_0.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -380,7 +381,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>51152</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:58947/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
