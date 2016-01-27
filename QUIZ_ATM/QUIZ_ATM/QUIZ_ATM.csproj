@@ -45,6 +45,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -211,6 +214,23 @@
     <Content Include="presentation\modificare_intrebare.aspx" />
     <Content Include="presentation\my_Profile.aspx" />
     <Content Include="packages.config" />
+    <EntityDeploy Include="bussiness\Utilizatori.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Utilizatori.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="bussiness\Utilizatori.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Utilizatori.edmx</DependentUpon>
+      <LastGenOutput>Utilizatori.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="bussiness\Utilizatori.edmx.diagram">
+      <DependentUpon>Utilizatori.edmx</DependentUpon>
+    </Content>
+    <Content Include="bussiness\Utilizatori.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Utilizatori.edmx</DependentUpon>
+      <LastGenOutput>Utilizatori1.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -246,6 +266,34 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bussiness\Admin.cs">
+      <DependentUpon>Utilizatori.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bussiness\bussiness.cs" />
+    <Compile Include="bussiness\Statistica.cs">
+      <DependentUpon>Utilizatori.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bussiness\sysdiagram.cs">
+      <DependentUpon>Utilizatori.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bussiness\Utilizatori.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Utilizatori.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bussiness\Utilizatori.cs">
+      <DependentUpon>Utilizatori.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bussiness\Utilizatori.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Utilizatori.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="bussiness\Utilizatori1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Utilizatori.tt</DependentUpon>
+    </Compile>
     <Compile Include="presentation\adaugire_intrebari.aspx.cs">
       <DependentUpon>adaugire_intrebari.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -367,6 +415,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
