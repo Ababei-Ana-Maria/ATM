@@ -8,6 +8,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+using QUIZ_ATM.conect;
+//
+using QUIZ_ATM.bussiness;
 
 namespace QUIZ_ATM
 {
@@ -22,7 +25,7 @@ namespace QUIZ_ATM
         {
             // verificare conexiune- MERGE!!!!!
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["quiz_u"].ConnectionString);
-            
+
             conn.Open();
             string q = "SELECT * FROM dbo.Admin";
             SqlCommand c1 = new SqlCommand(q, conn);
@@ -35,7 +38,8 @@ namespace QUIZ_ATM
             }
             while (rd1.Read())
             {
-                if (user == rd1[1].ToString()){
+                if (user == rd1[1].ToString())
+                {
                     if (pass == rd1[4].ToString())
                     {
                         Response.Redirect("admin_profile.aspx");

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UtilizatoriModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UtilizatoriEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="UtilizatoriModel.Admin" />
+    <EntitySet Name="Statisticas" EntityType="UtilizatoriModel.Statistica" />
+    <EntitySet Name="sysdiagrams" EntityType="UtilizatoriModel.sysdiagram" />
+    <EntitySet Name="Utilizatoris" EntityType="UtilizatoriModel.Utilizatori" />
+    <AssociationSet Name="FK_Statistica_Utilizatori" Association="UtilizatoriModel.FK_Statistica_Utilizatori">
+      <End Role="Utilizatori" EntitySet="Utilizatoris" />
+      <End Role="Statistica" EntitySet="Statisticas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id_admin" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Nume" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Prenume" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="mail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Parola" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Statistica">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id_utilizator" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Medie" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Nr_teste_parcurse" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Punctaj" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="Utilizatori" Relationship="UtilizatoriModel.FK_Statistica_Utilizatori" FromRole="Statistica" ToRole="Utilizatori" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Utilizatori">
+    <Key>
+      <PropertyRef Name="id_utilizator" />
+    </Key>
+    <Property Name="id_utilizator" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Nume" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Prenume" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Mail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Parola" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Pozitie" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Statisticas" Relationship="UtilizatoriModel.FK_Statistica_Utilizatori" FromRole="Utilizatori" ToRole="Statistica" />
+  </EntityType>
+  <Association Name="FK_Statistica_Utilizatori">
+    <End Role="Utilizatori" Type="UtilizatoriModel.Utilizatori" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Statistica" Type="UtilizatoriModel.Statistica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizatori">
+        <PropertyRef Name="id_utilizator" />
+      </Principal>
+      <Dependent Role="Statistica">
+        <PropertyRef Name="id_utilizator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

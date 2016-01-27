@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using QUIZ_ATM.conect;
 
 namespace QUIZ_ATM
 {

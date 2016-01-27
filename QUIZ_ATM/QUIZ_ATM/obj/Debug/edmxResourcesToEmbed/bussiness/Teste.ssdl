@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TesteModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TesteModelStoreContainer">
+    <EntitySet Name="Intrebari" EntityType="TesteModel.Store.Intrebari" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Raspunsuri" EntityType="TesteModel.Store.Raspunsuri" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="TesteModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Raspunsuri_Intrebari" Association="TesteModel.Store.FK_Raspunsuri_Intrebari">
+      <End Role="Intrebari" EntitySet="Intrebari" />
+      <End Role="Raspunsuri" EntitySet="Raspunsuri" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Intrebari">
+    <Key>
+      <PropertyRef Name="id_intrebare" />
+    </Key>
+    <Property Name="id_intrebare" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="varianta_corecta" Type="numeric" Nullable="false" />
+    <Property Name="id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Raspunsuri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id_intrebare" Type="numeric" Nullable="false" />
+    <Property Name="A" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="B" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="C" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="D" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Raspunsuri_Intrebari">
+    <End Role="Intrebari" Type="TesteModel.Store.Intrebari" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Raspunsuri" Type="TesteModel.Store.Raspunsuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Intrebari">
+        <PropertyRef Name="id_intrebare" />
+      </Principal>
+      <Dependent Role="Raspunsuri">
+        <PropertyRef Name="id_intrebare" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

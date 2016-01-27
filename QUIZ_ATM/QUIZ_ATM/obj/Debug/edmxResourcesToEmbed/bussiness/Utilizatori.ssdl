@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UtilizatoriModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="UtilizatoriModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="UtilizatoriModel.Store.Admin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Statistica" EntityType="UtilizatoriModel.Store.Statistica" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="UtilizatoriModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Utilizatori" EntityType="UtilizatoriModel.Store.Utilizatori" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Statistica_Utilizatori" Association="UtilizatoriModel.Store.FK_Statistica_Utilizatori">
+      <End Role="Utilizatori" EntitySet="Utilizatori" />
+      <End Role="Statistica" EntitySet="Statistica" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id_admin" Type="numeric" />
+    <Property Name="Nume" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prenume" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Parola" Type="nvarchar" MaxLength="50" />
+    <Property Name="id" Type="numeric" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Statistica">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id_utilizator" Type="numeric" />
+    <Property Name="Medie" Type="numeric" />
+    <Property Name="Nr_teste_parcurse" Type="numeric" />
+    <Property Name="Punctaj" Type="numeric" />
+    <Property Name="id" Type="numeric" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Utilizatori">
+    <Key>
+      <PropertyRef Name="id_utilizator" />
+    </Key>
+    <Property Name="id_utilizator" Type="numeric" Nullable="false" />
+    <Property Name="Nume" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prenume" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Parola" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pozitie" Type="numeric" />
+  </EntityType>
+  <Association Name="FK_Statistica_Utilizatori">
+    <End Role="Utilizatori" Type="UtilizatoriModel.Store.Utilizatori" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Statistica" Type="UtilizatoriModel.Store.Statistica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizatori">
+        <PropertyRef Name="id_utilizator" />
+      </Principal>
+      <Dependent Role="Statistica">
+        <PropertyRef Name="id_utilizator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

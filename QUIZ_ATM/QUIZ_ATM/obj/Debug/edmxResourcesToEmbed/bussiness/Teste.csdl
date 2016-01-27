@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TesteModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TesteEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Intrebaris" EntityType="TesteModel.Intrebari" />
+    <EntitySet Name="Raspunsuris" EntityType="TesteModel.Raspunsuri" />
+    <EntitySet Name="sysdiagrams" EntityType="TesteModel.sysdiagram" />
+    <AssociationSet Name="FK_Raspunsuri_Intrebari" Association="TesteModel.FK_Raspunsuri_Intrebari">
+      <End Role="Intrebari" EntitySet="Intrebaris" />
+      <End Role="Raspunsuri" EntitySet="Raspunsuris" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Intrebari">
+    <Key>
+      <PropertyRef Name="id_intrebare" />
+    </Key>
+    <Property Name="id_intrebare" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="varianta_corecta" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Raspunsuris" Relationship="TesteModel.FK_Raspunsuri_Intrebari" FromRole="Intrebari" ToRole="Raspunsuri" />
+  </EntityType>
+  <EntityType Name="Raspunsuri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id_intrebare" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="A" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="B" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="C" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="D" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Intrebari" Relationship="TesteModel.FK_Raspunsuri_Intrebari" FromRole="Raspunsuri" ToRole="Intrebari" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Raspunsuri_Intrebari">
+    <End Role="Intrebari" Type="TesteModel.Intrebari" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Raspunsuri" Type="TesteModel.Raspunsuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Intrebari">
+        <PropertyRef Name="id_intrebare" />
+      </Principal>
+      <Dependent Role="Raspunsuri">
+        <PropertyRef Name="id_intrebare" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
