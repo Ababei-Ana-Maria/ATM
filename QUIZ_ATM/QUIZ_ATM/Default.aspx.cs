@@ -17,12 +17,6 @@ namespace QUIZ_ATM
         {
 
         }
-        private void MessageBoxShow(Page page, string message)
-        {
-            Literal ltr = new Literal();
-            ltr.Text = @"<script type='text/javascript'> alert('" + message + "') </script>";
-            page.Controls.Add(ltr);
-        }
         //Log in
         protected void login_Click(object sender, EventArgs e)
         {
