@@ -49,7 +49,26 @@ namespace QUIZ_ATM
                 //else Response.Redirect("my_Profile.aspx");
             }
             // trebuie sa verificam daca e admin sau nu ca sa stim la ce pagina sa facem redirectarea
-           
+            conn.Close();
+
+            conn.Open();
+            string q2 = "SELECT * FROM dbo.Utilizatori";
+            SqlCommand c2 = new SqlCommand(q2, conn);
+            SqlDataReader rd2 = c2.ExecuteReader();
+            while (rd2.Read())
+            {
+                if (user == rd2[1].ToString())
+                {
+                    if (pass == rd2[4].ToString())
+                    {
+                        Response.Redirect("my_profile.aspx");
+                        break;
+                    }
+                }
+            }
+
+
+            conn.Close();
         }
         //Guest
         protected void guestmode_Click(object sender, EventArgs e)
