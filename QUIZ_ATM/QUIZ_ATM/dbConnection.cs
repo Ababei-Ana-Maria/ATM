@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace QUIZ_ATM.conect
+namespace QUIZ_ATM.a
 {
     public class dbConnection
     {

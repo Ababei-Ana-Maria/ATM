@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
-using QUIZ_ATM.conect;
+using QUIZ_ATM.a;
 //
 using QUIZ_ATM.bussiness;
 
