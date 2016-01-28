@@ -31,7 +31,6 @@ namespace QUIZ_ATM
             rd1.Read();
             Label1.Text = rd1[1].ToString();
             Label2.Text = rd1[2].ToString();
-            Label6.Text = rd1[5].ToString();
 
             conn.Close();
 
