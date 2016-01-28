@@ -12,11 +12,15 @@ namespace QUIZ_ATM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //+++
+            //verificare daca este logat sau nu
+            //daca nu e logat ==> default.aspx
         }
         //Butonul de  LOG OUT
         protected void logoutButton_Click(object sender, EventArgs e)
         {
+            //+++
+            //tip->0;
             Response.Redirect("Default.aspx");
         }
 
