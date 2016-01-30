@@ -22,7 +22,7 @@ namespace QUIZ_ATM
 
         protected void Modif_Click(object sender, EventArgs e)
         {
-            Response.Redirect("adaugire_intrebari.aspx");
+            Response.Redirect("update_intrebare.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)

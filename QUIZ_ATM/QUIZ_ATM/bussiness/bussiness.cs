@@ -23,7 +23,6 @@ namespace QUIZ_ATM.bussiness
 {
     public class bussiness
     {
-
         public void logare()
         {
             //aceste variabile reprezinta un rand din tabela
@@ -33,7 +32,6 @@ namespace QUIZ_ATM.bussiness
             Intrebari intr = new Intrebari();
             Raspunsuri rasp = new Raspunsuri();
             //
-       
         }
         
            
