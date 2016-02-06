@@ -25,6 +25,8 @@ namespace QUIZ_ATM.bussiness
 {
     public class buss
     {
+        public static int punctaj = 0;
+        public static int index = 0;
         public static int U = 0;
         public static int ID = 0;
         dbConnection conexiune = new dbConnection();
@@ -145,5 +147,82 @@ namespace QUIZ_ATM.bussiness
             conexiune.executeInsertQueryt(sql_i, a);
             conexiune.executeInsertQueryt(sql_r, b);
         }
+
+        public class incrementare
+        {
+
+            static int a = 2;
+            public int return_nr()
+            {
+
+                return a++;
+            }
+
+            public void set0()
+            {
+                a = 2;
+            }
+
+        }
+
+        public void verif_raspuns(int varianta, int index)
+        {
+
+            SqlDataReader b;
+            b = returnare_intrebari("toate");
+            while (b.Read())
+            {
+                if (index == Int32.Parse(b[0].ToString()))
+                {
+                    if (varianta == Int32.Parse(b[2].ToString()))
+                    {
+                        punctaj++;
+                    }
+                }
+            }
+            b.Close();
+        }
+
+        public int r_P()
+        {
+            return punctaj;
+        }
+        public void set_ind(int i)
+        {
+            index = i;
+        }
+        public int ret_ind()
+        {
+            return index;
+        }
+        public Admin return_date_admin()
+        {
+            conexiune.openConnectionu();
+            Admin AdminNou = new Admin();
+            SqlDataReader rdr = conexiune.executeSelectQueryu("SELECT * FROM dbo.Admin WHERE id_admin='" + ID.ToString() + "';", null);
+            if (rdr.HasRows)
+            {
+                while (rdr.Read())
+                {
+                    AdminNou.id_admin = Int32.Parse(rdr[0].ToString());
+                    AdminNou.Nume = rdr[1].ToString();
+                    AdminNou.Prenume = rdr[2].ToString();
+                    AdminNou.mail = rdr[3].ToString();
+                    AdminNou.Parola = rdr[4].ToString();
+                }
+            }
+            rdr.Close();
+            return AdminNou;
+        }
+        public SqlDataReader returnare_clasament()
+        {
+            string query = "SELECT dbo.Utilizatori.Nume,dbo.Utilizatori.Prenume,dbo.Statistica.Medie,dbo.Statistica.Nr_teste_parcurse FROM dbo.Utilizatori INNER JOIN dbo.Statistica ON dbo.Utilizatori.id_utilizator=dbo.Statistica.id_utilizator ";
+            var p = new[] { new SqlParameter() };
+            p = null;
+            SqlDataReader ok;
+            ok = conexiune.executeSelectQueryu(query, p);
+            return ok;
+        }
+
     }
 }

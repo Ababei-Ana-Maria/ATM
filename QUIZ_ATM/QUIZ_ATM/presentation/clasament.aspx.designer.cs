@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QUIZ_ATM {
-    
-    
-    public partial class clasament {
-        
+namespace QUIZ_ATM
+{
+
+
+    public partial class clasament
+    {
+
         /// <summary>
         /// Head1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// LogOut control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button LogOut;
-        
+
         /// <summary>
         /// GridView1 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
+
         /// <summary>
         /// home control.
         /// </summary>

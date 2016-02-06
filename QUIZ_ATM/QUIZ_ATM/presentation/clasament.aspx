@@ -33,9 +33,15 @@
 </script>
         <div style="height: 151px; margin-top: 46px; width: 339px;">
 
-            <asp:GridView ID="GridView1" 
-                runat="server">
-            </asp:GridView>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" RowStyle-BackColor="#A1DCF2"
+    HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White" Width="493px">
+    <Columns>
+        <asp:BoundField ItemStyle-Width="150px" DataField="Nume" HeaderText="Nume" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="Prenume" HeaderText="Prenume" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="Medie" HeaderText="Medie" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="Nr_teste_parcurse" HeaderText="Nr teste" />
+    </Columns>
+</asp:GridView>
 
 
     <div style="height: 50px; margin-top: 46px">
