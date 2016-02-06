@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QUIZ_ATM {
-    
-    
-    public partial class modificare_intrebare {
-        
+namespace QUIZ_ATM
+{
+
+
+    public partial class modificare_intrebare
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// LogOut control.
         /// </summary>
@@ -29,16 +31,16 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button LogOut;
-        
+
         /// <summary>
-        /// TextBox2 control.
+        /// ListBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
-        
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+
         /// <summary>
         /// TextBox1 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
+
         /// <summary>
         /// sterge control.
         /// </summary>
@@ -56,14 +58,5 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button sterge;
-        
-        /// <summary>
-        /// Modif control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Modif;
     }
 }

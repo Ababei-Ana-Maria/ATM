@@ -4,15 +4,17 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Windows;
 
 namespace QUIZ_ATM.a
 {
     public class dbConnection
     {
+
         private SqlDataAdapter myAdapter;
         //variabile pentru conexiunile la teste si utilizatori
-        private SqlConnection connt;
-        private SqlConnection connu;
+        public SqlConnection connt;
+        public SqlConnection connu;
         //initializare conexiuni cu bazele de date
         public dbConnection()
         {
@@ -21,7 +23,7 @@ namespace QUIZ_ATM.a
             connu = new SqlConnection(ConfigurationManager.ConnectionStrings["quiz_u"].ConnectionString);
         }
         //verificam daca conexiunea la Teste este deschisa daca nu e ,o deschide
-        private SqlConnection openConnectiont()
+        public SqlConnection openConnectiont()
         {
             if (connt.State == ConnectionState.Closed || connt.State == ConnectionState.Broken)
             {
@@ -30,7 +32,7 @@ namespace QUIZ_ATM.a
             return connt;
         }
         //verificam daca conexiunea la Utilizatori este deschisa daca nu e ,o deschide
-        private SqlConnection openConnectionu()
+        public SqlConnection openConnectionu()
         {
             if (connu.State == ConnectionState.Closed || connu.State == ConnectionState.Broken)
             {
@@ -39,21 +41,20 @@ namespace QUIZ_ATM.a
             return connu;
         }
         //Select Query din Teste si Utilizatori
-        public DataTable executeSelectQueryt(String _query, SqlParameter[] sqlParameter)
+        public SqlDataReader executeSelectQueryt(String _query, SqlParameter[] sqlParameter)
         {
             SqlCommand myCommandt = new SqlCommand();
-            DataTable dataTablet = new DataTable();
-            dataTablet = null;
-            DataSet dst = new DataSet();
+            SqlDataReader rdr;
             try
             {
                 myCommandt.Connection = openConnectiont();
                 myCommandt.CommandText = _query;
-                myCommandt.Parameters.AddRange(sqlParameter);
-                myCommandt.ExecuteNonQuery();                
-                myAdapter.SelectCommand = myCommandt;
-                myAdapter.Fill(dst);
-                dataTablet = dst.Tables[0];
+                if (sqlParameter != null)
+                {
+                    myCommandt.Parameters.AddRange(sqlParameter);
+                }
+                rdr = myCommandt.ExecuteReader();
+
             }
             catch (SqlException e)
             {
@@ -63,23 +64,23 @@ namespace QUIZ_ATM.a
             finally
             {
             }
-            return dataTablet;
+            //     string s = rdr[0].ToString();
+            return rdr;
         }
-        public DataTable executeSelectQueryu(String _query, SqlParameter[] sqlParameter)
+
+        public SqlDataReader executeSelectQueryu(String _query, SqlParameter[] sqlParameter)
         {
             SqlCommand myCommandu = new SqlCommand();
-            DataTable dataTableu = new DataTable();
-            dataTableu = null;
-            DataSet dsu = new DataSet();
+            SqlDataReader rdr;
             try
             {
-                myCommandu.Connection = openConnectiont();
+                myCommandu.Connection = openConnectionu();
                 myCommandu.CommandText = _query;
-                myCommandu.Parameters.AddRange(sqlParameter);
-                myCommandu.ExecuteNonQuery();                
-                myAdapter.SelectCommand = myCommandu;
-                myAdapter.Fill(dsu);
-                dataTableu = dsu.Tables[0];
+                if (sqlParameter != null)
+                {
+                    myCommandu.Parameters.AddRange(sqlParameter);
+                }
+                rdr = myCommandu.ExecuteReader();
             }
             catch (SqlException e)
             {
@@ -89,7 +90,7 @@ namespace QUIZ_ATM.a
             finally
             {
             }
-            return dataTableu;
+            return rdr;
         }
         // Insert Query in Teste si Utilizatori
         public bool executeInsertQueryt(String _query, SqlParameter[] sqlParameter)
@@ -138,6 +139,7 @@ namespace QUIZ_ATM.a
         public bool executeUpdateQueryt(String _query, SqlParameter[] sqlParameter)
         {
             SqlCommand myCommandt = new SqlCommand();
+
             try
             {
                 myCommandt.Connection = openConnectiont();
@@ -154,11 +156,13 @@ namespace QUIZ_ATM.a
             finally
             {
             }
+            myCommandt.Parameters.Clear();
             return true;
         }
         public bool executeUpdateQueryu(String _query, SqlParameter[] sqlParameter)
         {
             SqlCommand myCommandu = new SqlCommand();
+
             try
             {
                 myCommandu.Connection = openConnectionu();
@@ -175,7 +179,19 @@ namespace QUIZ_ATM.a
             finally
             {
             }
+            myCommandu.Parameters.Clear();
             return true;
+        }
+        public void closeConnection()
+        {
+            if (connu.State == ConnectionState.Open)
+            {
+                connu.Close();
+            }
+            if (connt.State == ConnectionState.Open)
+            {
+                connt.Close();
+            }
         }
     }
 }
