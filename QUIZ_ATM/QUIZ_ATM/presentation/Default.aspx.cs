@@ -16,6 +16,7 @@ namespace QUIZ_ATM
 {
     public partial class _Default : Page
     {
+        bussiness.buss ac = new bussiness.buss();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,57 +24,23 @@ namespace QUIZ_ATM
         //Log in
         protected void login_Click(object sender, EventArgs e)
         {
-            // verificare conexiune- MERGE!!!!!
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["quiz_u"].ConnectionString);
-
-            conn.Open();
-            string q = "SELECT * FROM dbo.Admin";
-            SqlCommand c1 = new SqlCommand(q, conn);
-            SqlDataReader rd1 = c1.ExecuteReader();
             var user = TextBox2.Text;
             var pass = TextBox4.Text;
-            if (user.Length == 0 || pass.Length == 0)
+            int optiune = ac.logare(user, pass);
+            if (optiune == 3)
             {
-                Label1.Text = "NU ATI INTRODUS USER SAU PAROLA !!!";
+                Label1.Text = "Parola sau E-mail gresite!!";
             }
-            while (rd1.Read())
+            if (optiune == 1)
             {
-                if (user == rd1[1].ToString())
-                {
-                    if (pass == rd1[4].ToString())
-                    {
-                        Response.Redirect("admin_profile.aspx");
-                        break;
-                    }
-                }
-                //else Response.Redirect("my_Profile.aspx");
-            }
-            // trebuie sa verificam daca e admin sau nu ca sa stim la ce pagina sa facem redirectarea
-            conn.Close();
 
-            conn.Open();
-            string q2 = "SELECT * FROM dbo.Utilizatori";
-            SqlCommand c2 = new SqlCommand(q2, conn);
-            SqlDataReader rd2 = c2.ExecuteReader();
-            while (rd2.Read())
+                Response.Redirect("admin_profile.aspx");
+            }
+            if (optiune == 2)
             {
-                if (user == rd2[1].ToString())
-                {
-                    if (pass == rd2[4].ToString())
-                    {
-                        Response.Redirect("my_profile.aspx");
-                        break;
-                    }
-                }
+
+                Response.Redirect("my_Profile.aspx");
             }
-
-
-            conn.Close();
-        }
-        //Guest
-        protected void guestmode_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("my_Profile.aspx");
         }
         //Creare cont
         protected void crearecont_Click(object sender, EventArgs e)

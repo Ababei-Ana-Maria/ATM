@@ -333,7 +333,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Utilizatori.tt</DependentUpon>
     </Compile>
-    <Compile Include="dbConnection.cs" />
+    <Compile Include="DataLayer.cs" />
     <Compile Include="presentation\adaugire_intrebari.aspx.cs">
       <DependentUpon>adaugire_intrebari.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

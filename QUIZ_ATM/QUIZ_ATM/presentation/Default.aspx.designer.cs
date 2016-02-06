@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QUIZ_ATM {
-    
-    
-    public partial class _Default {
-        
+namespace QUIZ_ATM
+{
+
+
+    public partial class _Default
+    {
+
         /// <summary>
         /// Head1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// TextBox2 control.
         /// </summary>
@@ -38,16 +40,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox2;
-        
-        /// <summary>
-        /// TextBox3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
-        
+
         /// <summary>
         /// TextBox4 control.
         /// </summary>
@@ -56,7 +49,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox4;
-        
+
         /// <summary>
         /// login control.
         /// </summary>
@@ -65,16 +58,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button login;
-        
-        /// <summary>
-        /// guestmode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button guestmode;
-        
+
         /// <summary>
         /// crearecont control.
         /// </summary>
@@ -83,7 +67,7 @@ namespace QUIZ_ATM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button crearecont;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>
