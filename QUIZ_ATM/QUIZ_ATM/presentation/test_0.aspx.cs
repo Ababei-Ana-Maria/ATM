@@ -10,6 +10,7 @@ namespace QUIZ_ATM
 {
     public partial class test_0 : System.Web.UI.Page
     {
+        bussiness.buss obj = new bussiness.buss();
         protected void Page_Load(object sender, EventArgs e)
         {
             //+++
@@ -19,8 +20,7 @@ namespace QUIZ_ATM
         //Butonul de  LOG OUT
         protected void logoutButton_Click(object sender, EventArgs e)
         {
-            //+++
-            //tip->0;
+            obj.logout_f();
             Response.Redirect("Default.aspx");
         }
 

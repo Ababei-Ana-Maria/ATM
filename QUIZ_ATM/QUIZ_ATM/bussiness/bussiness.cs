@@ -147,7 +147,42 @@ namespace QUIZ_ATM.bussiness
             conexiune.executeInsertQueryt(sql_i, a);
             conexiune.executeInsertQueryt(sql_r, b);
         }
-
+        public Utilizatori return_date_utiliz()
+        {
+            conexiune.openConnectionu();
+            Utilizatori Unou = new Utilizatori();
+            SqlDataReader rdr = conexiune.executeSelectQueryu("SELECT * FROM dbo.Utilizatori WHERE id_utilizator='" + ID.ToString() + "';", null);
+            if (rdr.HasRows)
+            {
+                while (rdr.Read())
+                {
+                    Unou.id_utilizator = Int32.Parse(rdr[0].ToString());
+                    Unou.Nume = rdr[1].ToString();
+                    Unou.Prenume = rdr[2].ToString();
+                    Unou.Mail = rdr[3].ToString();
+                    Unou.Parola = rdr[4].ToString();
+                }
+            }
+            rdr.Close();
+            return Unou;
+        }
+        public Statistica return_date_statistice()
+        {
+            conexiune.openConnectionu();
+            Statistica SNou = new Statistica();
+            SqlDataReader rdr = conexiune.executeSelectQueryu("SELECT * FROM dbo.Statistica WHERE id_utilizator='" + ID.ToString() + "';", null);
+            if (rdr.HasRows)
+            {
+                while (rdr.Read())
+                {
+                    SNou.id_utilizator = Int32.Parse(rdr[0].ToString());
+                    SNou.Medie = Int32.Parse(rdr[1].ToString());
+                    SNou.Nr_teste_parcurse = Int32.Parse(rdr[2].ToString());
+                }
+            }
+            rdr.Close();
+            return SNou;
+        }
         public class incrementare
         {
 
@@ -163,6 +198,16 @@ namespace QUIZ_ATM.bussiness
                 a = 2;
             }
 
+        }
+        public void logout_f()
+        {
+            ID = 0;
+            U = 0;
+        }
+
+        public int retID()
+        {
+            return ID;
         }
 
         public void verif_raspuns(int varianta, int index)
@@ -214,6 +259,18 @@ namespace QUIZ_ATM.bussiness
             rdr.Close();
             return AdminNou;
         }
+
+        public void stergere_intrebare(int id_intr)
+        {
+
+            var c = new[] { new SqlParameter("@id", id_intr) };
+            string queryi = "DELETE FROM dbo.Intrebari WHERE dbo.Intrebari.id_intrebare=@id";
+            string queryr = "DELETE FROM dbo.Raspunsuri WHERE dbo.Raspunsuri.id_intrebare=@id";
+            conexiune.executeUpdateQueryt(queryr, c);
+            conexiune.executeUpdateQueryt(queryi, c);
+
+        }
+
         public SqlDataReader returnare_clasament()
         {
             string query = "SELECT dbo.Utilizatori.Nume,dbo.Utilizatori.Prenume,dbo.Statistica.Medie,dbo.Statistica.Nr_teste_parcurse FROM dbo.Utilizatori INNER JOIN dbo.Statistica ON dbo.Utilizatori.id_utilizator=dbo.Statistica.id_utilizator ";
