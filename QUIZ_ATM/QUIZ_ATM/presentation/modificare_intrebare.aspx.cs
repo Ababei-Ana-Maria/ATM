@@ -21,7 +21,8 @@ namespace QUIZ_ATM
             read = b.returnare_intrebari("toate");
             while (read.Read())
             {
-                ListBox1.Items.Add(read[1].ToString());
+                string complet = read[0].ToString() + " " + read[1].ToString();
+                ListBox1.Items.Add(complet);
             }
             read.Close();
         }
