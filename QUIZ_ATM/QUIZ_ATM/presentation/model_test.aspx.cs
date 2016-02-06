@@ -38,10 +38,10 @@ namespace QUIZ_ATM
                 {
                     obj.set_ind(Int32.Parse(a[0].ToString()));
                     question.Text = a[1].ToString();
-                    answer1.Text = a[4].ToString();
-                    answer2.Text = a[5].ToString();
-                    answer3.Text = a[6].ToString();
-                    answer4.Text = a[7].ToString();
+                    answer1.Text = a[5].ToString();
+                    answer2.Text = a[6].ToString();
+                    answer3.Text = a[7].ToString();
+                    answer4.Text = a[8].ToString();
                 }
                 a.Close();
             }
